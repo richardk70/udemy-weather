@@ -51,7 +51,7 @@ app.get('/forecast', (req, res) => {
         if (err) 
             return res.send( err );
         else {
-            forecast(data.address, data.lat, data.long, (err, forecast) => {
+            forecast(data.place, data.lat, data.long, (err, forecast) => {
                 if (err)
                     return res.send(err);
                 res.send({

@@ -10,9 +10,10 @@ const geocode = (address, callback) => {
     else if (response.body.features.length == 0)
         callback('Given location is invalid.', undefined);
     else {
+        const place = response.body.features[0].place_name;
         const lat = response.body.features[0].center[1];
         const long = response.body.features[0].center[0];
-        callback(undefined, { lat, long, address });
+        callback(undefined, { lat, long, place });
     }
 });
 }
