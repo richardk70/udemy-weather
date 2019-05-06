@@ -9,7 +9,7 @@ document.addEventListener('submit', (e) => {
 
     console.log(address.value);
     
-    fetch(`http://localhost:3000/forecast?address=${address.value}`)
+    fetch(`/forecast?address=${address.value}`)
         .then( (res) => {
             res.json().then( (data) => {
                 if (data.error) {

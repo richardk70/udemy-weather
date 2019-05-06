@@ -8,6 +8,8 @@ const forecast = require('./utils/forecast');
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 // template engine
 const viewsPath = path.join(__dirname, './templates/views');
 const partialsPath = path.join(__dirname, './templates/partials');
@@ -81,7 +83,7 @@ app.get('*', function(req, res) {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Listening port 3000...');
+app.listen(port, () => {
+    console.log('Listening port ' + port + '...');
 });
     
